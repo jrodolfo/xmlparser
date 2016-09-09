@@ -1,16 +1,14 @@
 package com.jrodolfo.xmlparser;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.lang.invoke.MethodHandles;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by joao.r.oliveira on 08-Sep-2016.
+ * Created by Rod Oliveira on 08-Sep-2016.
  */
 public class Util {
 

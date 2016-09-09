@@ -2,22 +2,48 @@ package com.jrodolfo.xmlparser;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.File;
 import java.lang.invoke.MethodHandles;
+import java.net.URL;
 import java.util.List;
 
 /**
- * Created by joao.r.oliveira on 08-Sep-2016.
+ * Created by Rod Oliveira on 08-Sep-2016.
  */
 public class DomXmlParser {
 
     final Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
     public void parse(String fileName, List<String> nodesToMatch) {
-        logger.debug("Parsing fileName='" + fileName + "' with DomXmlParser...");
-        logger.debug("Nodes to match:");
-        for (String nodeName : nodesToMatch) {
-            logger.debug("nodeName='" + nodeName);
+
+        URL url = MethodHandles.lookup().lookupClass().getClassLoader().getResource(fileName);
+        File xmlFile = new File(url.toString().replace("file:/", ""));
+        logger.debug("Parsing file " + xmlFile + " with DomXmlParser");
+
+        try {
+            Document xmlDocument = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(xmlFile);
+            xmlDocument.getDocumentElement().normalize();
+            NodeList nodeList;
+            System.out.println("");
+            for (String nodeName : nodesToMatch) {
+                nodeList = xmlDocument.getElementsByTagName(nodeName);
+                for (int i = 0; i < nodeList.getLength(); i++) {
+                    Node nNode = nodeList.item(i);
+                    System.out.println("Node \"" + nodeName + "\" found with value \"" + nNode.getTextContent() + "\"");
+                }
+            }
+            System.out.println("");
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+
+
+
     }
 }

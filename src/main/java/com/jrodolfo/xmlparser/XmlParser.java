@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.List;
 
 /**
- * Created by joao.r.oliveira on 08-Sep-2016.
+ * Created by Rod Oliveira on 08-Sep-2016.
  */
 public class XmlParser {
 
