@@ -33,17 +33,13 @@ public class DomXmlParser {
             for (String nodeName : nodesToMatch) {
                 nodeList = xmlDocument.getElementsByTagName(nodeName);
                 for (int i = 0; i < nodeList.getLength(); i++) {
-                    Node nNode = nodeList.item(i);
-                    System.out.println("Node \"" + nodeName + "\" found with value \"" + nNode.getTextContent() + "\"");
+                    Node node = nodeList.item(i);
+                    System.out.println("Node \"" + nodeName + "\" found with value \"" + node.getTextContent() + "\"");
                 }
             }
             System.out.println("");
-
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
-
     }
 }

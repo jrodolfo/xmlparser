@@ -22,7 +22,7 @@ public class SaxXmlParser {
         logger.debug("Parsing file " + xmlFile + " with SaxXmlParser");
         logger.debug("Nodes to match:");
         for (String nodeName : nodesToMatch) {
-            logger.debug("nodeName='" + nodeName);
+            logger.debug("nodeName=" + nodeName);
         }
     }
 }
