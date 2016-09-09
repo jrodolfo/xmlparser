@@ -22,11 +22,11 @@ public class DomXmlParser {
     public void parse(String fileName, List<String> nodesToMatch) {
 
         URL url = MethodHandles.lookup().lookupClass().getClassLoader().getResource(fileName);
-        File xmlFile = new File(url.toString().replace("file:/", ""));
-        logger.debug("Parsing file " + xmlFile + " with DomXmlParser");
+        File file = new File(url.toString().replace("file:/", ""));
+        logger.debug("Parsing file " + file + " with DomXmlParser");
 
         try {
-            Document xmlDocument = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(xmlFile);
+            Document xmlDocument = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(file);
             xmlDocument.getDocumentElement().normalize();
             NodeList nodeList;
             System.out.println("");
