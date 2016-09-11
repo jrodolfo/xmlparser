@@ -16,32 +16,31 @@ import java.util.List;
 public class SaxXmlParser {
 
     private static TuStoreRequest tuStoreRequest = null;
+    private static Root root = null;
+
     final Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
     public void parse(String fileName, List<String> nodesToMatch) {
 
         URL url = MethodHandles.lookup().lookupClass().getClassLoader().getResource(fileName);
         File file = new File(url.toString().replace("file:/", ""));
+
+
         logger.debug("Parsing file " + file + " with SaxXmlParser");
         logger.debug("Nodes to match:");
         for (String nodeName : nodesToMatch) {
             logger.debug("nodeName=" + nodeName);
         }
 
-        for (String nodeName : nodesToMatch) {
-            logger.debug("nodeName=" + nodeName);
-            try {
-                tuStoreRequest = TuStoreRequestCreator.createTuStoreRequest(fileName);
-                if (tuStoreRequest != null) {
-                    System.out.println("Node \"" + "ns2:ID" + "\" found with value \"" + tuStoreRequest.getNs2ID() + "\"");
-                }
-            } catch (SAXException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        XmlDigester xmlDigester = new XmlDigester();
+        try {
+            root = xmlDigester.DigesterIt(file);
+            logger.debug("root: " + root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
         }
-
 
     }
 }
