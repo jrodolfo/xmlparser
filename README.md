@@ -31,11 +31,11 @@ General requirements:
     it should include a release document explaining how to run the application 
     and explaining pre-requisites and configurations.
 
-## How to run it?
+## Pre-requisites, configurations, and how to run it
 
 1) Pre-requisites and Configurations
 
-You should have git, java 8 and maven installed.
+You should have Git, Java 8 and Maven installed.
 
 2) Clone the app:
 
@@ -44,7 +44,7 @@ git clone https://github.com/jrodolfo/xmlparser
 3) Edit keys on file xmlparser.properties to configure the xml files to be parsed, which elements, and 
 threshold to define big files in number of bytes
 
-4) Open a command prompt and type:
+4) In order to run the application, open a command prompt and type:
 
     cd xmlparser
     mvn package
