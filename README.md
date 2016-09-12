@@ -46,7 +46,7 @@ git clone https://github.com/jrodolfo/xmlparser
 
 2.2) Downloading a zip file with source code, build configuration, and test codes:
 
-https://github.com/jrodolfo/xmlparser/xmlparser.zip
+https://github.com/jrodolfo/xmlparser/blob/master/xmlparser.zip
 
 3) Edit keys on file xmlparser.properties to configure the xml files to be parsed, which elements, and 
 threshold to define big files in number of bytes
