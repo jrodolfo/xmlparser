@@ -20,7 +20,6 @@ public class XmlDigester {
 
     public Root DigesterIt(File file) throws IOException, SAXException
     {
-        logger.debug("Parsing file " + file + " with DigesterIt");
         Digester digester = new Digester();
         digester.push(this);
         digester.addCallMethod("root/ns5:TuStoreRequest", "addTuStoreRequest", 17);
@@ -82,7 +81,6 @@ public class XmlDigester {
                 ns5DestLoc,
                 ns5IsHoldOver);
         root.addTuStoreRequest(tuStoreRequest);
-        logger.debug("tuStoreRequest added ns2ID=\"" + ns2ID + "\"");
     }
 
 }

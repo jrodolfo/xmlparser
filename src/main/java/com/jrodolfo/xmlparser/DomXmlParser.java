@@ -23,7 +23,7 @@ public class DomXmlParser {
 
         URL url = MethodHandles.lookup().lookupClass().getClassLoader().getResource(fileName);
         File file = new File(url.toString().replace("file:/", ""));
-        logger.debug("Parsing file " + file + " with DomXmlParser");
+        logger.debug("Parsing file " + file + " using DomXmlParser");
 
         try {
             Document xmlDocument = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(file);

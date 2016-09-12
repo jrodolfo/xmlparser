@@ -24,22 +24,20 @@ public class SaxXmlParser {
 
         URL url = MethodHandles.lookup().lookupClass().getClassLoader().getResource(fileName);
         File file = new File(url.toString().replace("file:/", ""));
-
-
-        logger.debug("Parsing file " + file + " with SaxXmlParser");
-        logger.debug("Nodes to match:");
-        for (String nodeName : nodesToMatch) {
-            logger.debug("nodeName=" + nodeName);
-        }
-
+        logger.debug("Parsing file " + file + " using SaxXmlParser");
         XmlDigester xmlDigester = new XmlDigester();
+
         try {
             root = xmlDigester.DigesterIt(file);
-            logger.debug("root: " + root);
             System.out.println(root.toString(nodesToMatch));
         } catch (IOException e) {
+            logger.error("IOException message='" + e.getMessage() + "'");
             e.printStackTrace();
         } catch (SAXException e) {
+            logger.error("SAXException message='" + e.getMessage() + "'");
+            e.printStackTrace();
+        }  catch (Exception e) {
+            logger.error("Exception message='" + e.getMessage() + "'");
             e.printStackTrace();
         }
 

@@ -31,7 +31,6 @@ public class PropertyValues {
             }
 
             // get the properties values and print them out
-            logger.debug("debug=" + properties.getProperty("debug"));
             logger.debug("files.to.parse=" + properties.getProperty("files.to.parse"));
             logger.debug("nodes.to.match=" + properties.getProperty("nodes.to.match"));
             logger.debug("threshold.file.size=" + properties.getProperty("threshold.file.size"));

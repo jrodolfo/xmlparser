@@ -167,24 +167,24 @@ public class TuStoreRequest {
 
      String getValue(String elementName) {
         String elementValue = "";
-        switch (elementName) {
-            case "ns2:ID"            : elementValue = getNs2ID();            break;
-            case "ns2:Type"          : elementValue = getNs2Type();          break;
-            case "ns2:Version"       : elementValue = getNs2Version();       break;
-            case "ns2:Timestamp"     : elementValue = getNs2Timestamp();     break;
-            case "ns2:Sender"        : elementValue = getNs2Sender();        break;
-            case "ns2:Receiver"      : elementValue = getNs2Receiver();      break;
-            case "ns5:Priority"      : elementValue = getNs5Priority();      break;
-            case "ns2:Denomination"  : elementValue = getNs2Denomination();  break;
-            case "ns2:ValuableType"  : elementValue = getNs2ValuableType();  break;
-            case "ns2:InventoryType" : elementValue = getNs2InventoryType(); break;
-            case "ns2:InventoryUnit" : elementValue = getNs2InventoryUnit(); break;
-            case "ns2:Quantity"      : elementValue = getNs2Quantity();      break;
-            case "ns2:Value"         : elementValue = getNs2Value();         break;
-            case "ns2:TuId"          : elementValue = getNs2TuId();          break;
-            case "ns5:SrcLoc"        : elementValue = getNs5SrcLoc();        break;
-            case "ns5:DestLoc"       : elementValue = getNs5DestLoc();       break;
-            case "ns5:IsHoldOver"    : elementValue = getNs5IsHoldOver();    break;
+        switch (elementName.toLowerCase()) {
+            case "ns2:id"            : elementValue = getNs2ID();            break;
+            case "ns2:type"          : elementValue = getNs2Type();          break;
+            case "ns2:version"       : elementValue = getNs2Version();       break;
+            case "ns2:timestamp"     : elementValue = getNs2Timestamp();     break;
+            case "ns2:sender"        : elementValue = getNs2Sender();        break;
+            case "ns2:receiver"      : elementValue = getNs2Receiver();      break;
+            case "ns5:priority"      : elementValue = getNs5Priority();      break;
+            case "ns2:denomination"  : elementValue = getNs2Denomination();  break;
+            case "ns2:valuabletype"  : elementValue = getNs2ValuableType();  break;
+            case "ns2:inventorytype" : elementValue = getNs2InventoryType(); break;
+            case "ns2:inventoryunit" : elementValue = getNs2InventoryUnit(); break;
+            case "ns2:quantity"      : elementValue = getNs2Quantity();      break;
+            case "ns2:value"         : elementValue = getNs2Value();         break;
+            case "ns2:tuid"          : elementValue = getNs2TuId();          break;
+            case "ns5:srcloc"        : elementValue = getNs5SrcLoc();        break;
+            case "ns5:destloc"       : elementValue = getNs5DestLoc();       break;
+            case "ns5:isholdover"    : elementValue = getNs5IsHoldOver();    break;
         }
         return "Node \"" + elementName + "\" found with value \"" + elementValue + "\"\n";
      }

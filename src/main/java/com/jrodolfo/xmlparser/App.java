@@ -18,7 +18,6 @@ public class App
     final List<String> filesToParse;
     final List<String> nodesToMatch;
     final long thresholdFileSize;
-    boolean debug;
     final Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
 
@@ -27,7 +26,6 @@ public class App
         filesToParse = Util.stringToList(properties.getProperty("files.to.parse"));
         nodesToMatch = Util.stringToList(properties.getProperty("nodes.to.match"));
         thresholdFileSize = Long.parseLong(properties.getProperty("threshold.file.size"));
-        debug = new Boolean(properties.getProperty("debug"));
     }
 
     public static void main(String[] args)
@@ -39,8 +37,8 @@ public class App
                 xmlParser = new XmlParser(fileName, app.nodesToMatch, app.thresholdFileSize);
                 xmlParser.parse();
             } catch (FileNotFoundException e) {
+                app.logger.error("FileNotFoundException message='" + e.getMessage() + "'");
                 e.printStackTrace();
-                if (app.debug) app.logger.error("FileNotFoundException message='" + e.getMessage() + "'");
             }
         }
     }
