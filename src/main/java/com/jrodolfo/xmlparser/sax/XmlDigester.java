@@ -1,7 +1,5 @@
 package com.jrodolfo.xmlparser.sax;
 
-import com.jrodolfo.xmlparser.sax.Root;
-import com.jrodolfo.xmlparser.sax.TuStoreRequest;
 import org.apache.commons.digester3.Digester;
 import org.xml.sax.SAXException;
 import java.io.File;

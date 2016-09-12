@@ -1,7 +1,5 @@
 package com.jrodolfo.xmlparser.sax;
 
-import com.jrodolfo.xmlparser.sax.TuStoreRequest;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,6 +26,11 @@ public class Root {
         return result;
     }
 
+    /**
+     * Overloading toString to allow printing only the content of some nodes
+     * @param nodesToMatch we print only the content of these nodes
+     * @return a string with a list of nodes name and nodes value
+     */
     public String toString(List<String> nodesToMatch) {
         String tuStoreRequestStr = "";
         int i = 1;
