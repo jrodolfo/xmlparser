@@ -21,13 +21,23 @@ public class Root {
         String tuStoreRequestStr = "";
         int i = 1;
         for (TuStoreRequest tuStoreRequest : listOfTuStoreRequest) {
-            tuStoreRequestStr += "\n\t(" + i + ") " + tuStoreRequest.toString();
+            tuStoreRequestStr += "\n" + i + ") " + tuStoreRequest.toString();
             i++;
         }
         String result = "Root{" +
                 "listOfTuStoreRequest=" + tuStoreRequestStr +
                 '}';
         return result;
+    }
+
+    public String toString(List<String> nodesToMatch) {
+        String tuStoreRequestStr = "";
+        int i = 1;
+        for (TuStoreRequest tuStoreRequest : listOfTuStoreRequest) {
+            tuStoreRequestStr += "\n" + i + ") " + tuStoreRequest.toString(nodesToMatch);
+            i++;
+        }
+        return tuStoreRequestStr;
     }
 
     public List<TuStoreRequest> getListOfTuStoreRequest() {

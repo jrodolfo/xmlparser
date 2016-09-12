@@ -36,6 +36,7 @@ public class SaxXmlParser {
         try {
             root = xmlDigester.DigesterIt(file);
             logger.debug("root: " + root);
+            System.out.println(root.toString(nodesToMatch));
         } catch (IOException e) {
             e.printStackTrace();
         } catch (SAXException e) {
