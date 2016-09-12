@@ -1,26 +1,26 @@
 # XML Parser
-Simple Java app that implements XML parse using DOM and SAX
+Java app that implements XML parse using DOM and SAX
 
 ## What is this?
 
-This is a simple Java app that implements XML parse using DOM and SAX based on the following features:
+This is a Java app that implements XML parse using DOM and SAX based on the following features:
 
-1) Use sample-small.xml and sample-big.xml documents for testing
+1) Files sample-small.xml and sample-big.xml are used for testing.
 
-2) There should be a configuration file, xmlparser.properties, where user can define the nodes
-   (i.e ns2:Denomination) he/she is interested in (case insensitive)
+2) There is a configuration file, xmlparser.properties, where user can define the nodes/tag/element
+   (e.g. ns2:Denomination) he/she is interested in (case insensitive).
 
-3) During the passing the XML document, if it encounters one of a defined 
-   tag, it should print the node value defined for that element as follows
+3) During the parsing of the XML document, if it encounters one of a defined 
+   tag, it prints the node value defined for that element as follows:
 
 		Node {Node name} found with value {Node value}
 
-4) Application should be able to handle large files
+4) Application is able to handle large files.
 
 5) If the configuration file has defined the threshold file size 
-   in bytes (e.g. FileThreshold:20000) then any xml file larger than that 
-   will be considered to be a large file. In this case, your application
-   should use appropriate parsing method to be able to handle large files.
+   in bytes, e.g. threshold.file.size=20000, then any xml file larger than that 20,000 bytes
+   is considered to be a large file. In this case, the application
+   uses appropriate parsing method (SAX, not DOM) to be able to handle large files.
 
 General requirements:
 
