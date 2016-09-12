@@ -7,7 +7,7 @@ This is a Java app that implements XML parse using DOM and SAX based on the foll
 
 1) Files sample-small.xml and sample-big.xml are used for testing.
 
-2) There is a configuration file, xmlparser.properties, where user can define the nodes/tag/element
+2) There is a configuration file, xmlparser.properties, where user can define the nodes (aka tags or elements)
    (e.g. ns2:Denomination) he/she is interested in (case insensitive).
 
 3) During the parsing of the XML document, if it encounters one of a defined 
