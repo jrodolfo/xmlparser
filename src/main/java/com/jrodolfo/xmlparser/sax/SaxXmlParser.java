@@ -6,6 +6,7 @@ import org.xml.sax.SAXException;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.lang.invoke.MethodHandles;
 import java.net.URL;
 import java.util.List;
@@ -22,13 +23,12 @@ public class SaxXmlParser {
 
     public void parse(String fileName, List<String> nodesToMatch) {
 
-        URL url = MethodHandles.lookup().lookupClass().getClassLoader().getResource(fileName);
-        File file = new File(url.toString().replace("file:/", ""));
-        logger.debug("Parsing file " + file + " using SaxXmlParser");
+        InputStream inputStream = MethodHandles.lookup().lookupClass().getClassLoader().getResourceAsStream(fileName);
+        logger.debug("Parsing file " + fileName + " using SaxXmlParser");
         XmlDigester xmlDigester = new XmlDigester();
 
         try {
-            root = xmlDigester.DigesterIt(file);
+            root = xmlDigester.DigesterIt(inputStream);
             System.out.println(root.toString(nodesToMatch));
         } catch (IOException e) {
             logger.error("IOException message='" + e.getMessage() + "'");

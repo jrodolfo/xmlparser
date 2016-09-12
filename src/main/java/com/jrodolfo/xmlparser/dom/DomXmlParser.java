@@ -8,6 +8,7 @@ import org.w3c.dom.NodeList;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
+import java.io.InputStream;
 import java.lang.invoke.MethodHandles;
 import java.net.URL;
 import java.util.List;
@@ -21,12 +22,11 @@ public class DomXmlParser {
 
     public void parse(String fileName, List<String> nodesToMatch) {
 
-        URL url = MethodHandles.lookup().lookupClass().getClassLoader().getResource(fileName);
-        File file = new File(url.toString().replace("file:/", ""));
-        logger.debug("Parsing file " + file + " using DomXmlParser");
+        InputStream inputStream = MethodHandles.lookup().lookupClass().getClassLoader().getResourceAsStream(fileName);
+        logger.debug("Parsing file " + fileName + " using DomXmlParser");
 
         try {
-            Document xmlDocument = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(file);
+            Document xmlDocument = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(inputStream);
             xmlDocument.getDocumentElement().normalize();
             NodeList nodeList;
             System.out.println("");

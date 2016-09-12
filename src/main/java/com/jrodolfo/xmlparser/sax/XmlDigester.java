@@ -4,6 +4,7 @@ import org.apache.commons.digester3.Digester;
 import org.xml.sax.SAXException;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * Created by Rod Oliveira on 10-Sep-2016.
@@ -12,7 +13,7 @@ public class XmlDigester {
 
     public Root root = new Root();
 
-    public Root DigesterIt(File file) throws IOException, SAXException
+    public Root DigesterIt(InputStream inputStream) throws IOException, SAXException
     {
         Digester digester = new Digester();
         digester.push(this);
@@ -34,7 +35,7 @@ public class XmlDigester {
         digester.addCallParam("root/ns5:TuStoreRequest/ns5:MessageBody/ns5:SrcLoc", 14);
         digester.addCallParam("root/ns5:TuStoreRequest/ns5:MessageBody/ns5:DestLoc", 15);
         digester.addCallParam("root/ns5:TuStoreRequest/ns5:MessageBody/ns5:IsHoldOver", 16);
-        digester.parse(file);
+        digester.parse(inputStream);
         return root;
     }
 
