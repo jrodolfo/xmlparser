@@ -48,8 +48,7 @@ threshold to define big files in number of bytes
 
     cd xmlparser
     mvn package
-    cd target\classes
-    java com.jrodolfo.xmlparser.App
+    java -jar target/xmlparser.jar
 
 ## To do list
 
