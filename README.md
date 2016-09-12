@@ -28,18 +28,25 @@ General requirements:
     One should be able to compile, build, and run this application by downloading a zip file
     with source code, build configuration, and test codes, or by cloning the app on GitHub.
     The implementation should follow the best practices of software development, and
-    it should include a release document explaining how to run the application 
-    and explaining pre-requisites and configurations.
+    it should include a release document explaining pre-requisites, configuration, and how to 
+    run the application.
 
 ## Pre-requisites, configurations, and how to run it
 
 1) Pre-requisites and Configurations
 
-You should have Git, Java 8 and Maven installed.
+You will need Java 7 (or later version) and Maven installed. If you want to clone the app from GitHub,
+you will need Git.
 
-2) Clone the app:
+2) Get the app by one of these two methods:
+
+2.1) Cloning the app:
 
 git clone https://github.com/jrodolfo/xmlparser
+
+2.2) Downloading a zip file with source code, build configuration, and test codes:
+
+https://github.com/jrodolfo/xmlparser/xmlparser.zip
 
 3) Edit keys on file xmlparser.properties to configure the xml files to be parsed, which elements, and 
 threshold to define big files in number of bytes
