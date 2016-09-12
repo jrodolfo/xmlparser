@@ -1,5 +1,7 @@
 package com.jrodolfo.xmlparser;
 
+import com.jrodolfo.xmlparser.util.PropertyValues;
+import com.jrodolfo.xmlparser.util.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

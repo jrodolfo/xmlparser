@@ -1,4 +1,6 @@
-package com.jrodolfo.xmlparser;
+package com.jrodolfo.xmlparser.sax;
+
+import com.jrodolfo.xmlparser.sax.TuStoreRequest;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.jrodolfo.xmlparser;
+package com.jrodolfo.xmlparser.sax;
 
 import java.util.List;
 

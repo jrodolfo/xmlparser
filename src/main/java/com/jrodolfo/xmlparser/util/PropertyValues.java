@@ -1,4 +1,4 @@
-package com.jrodolfo.xmlparser;
+package com.jrodolfo.xmlparser.util;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

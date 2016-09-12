@@ -1,5 +1,9 @@
 package com.jrodolfo.xmlparser;
 
+import com.jrodolfo.xmlparser.dom.DomXmlParser;
+import com.jrodolfo.xmlparser.sax.SaxXmlParser;
+import com.jrodolfo.xmlparser.util.Util;
+
 import java.io.FileNotFoundException;
 import java.util.List;
 

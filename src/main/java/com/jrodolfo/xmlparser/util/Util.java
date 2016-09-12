@@ -1,4 +1,4 @@
-package com.jrodolfo.xmlparser;
+package com.jrodolfo.xmlparser.util;
 
 import java.io.File;
 import java.io.FileNotFoundException;
