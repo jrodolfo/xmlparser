@@ -1,21 +1,15 @@
 package com.jrodolfo.xmlparser;
 
-
 import org.apache.commons.digester3.Digester;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
-
 import java.io.File;
 import java.io.IOException;
-import java.lang.invoke.MethodHandles;
 
 /**
  * Created by Rod Oliveira on 10-Sep-2016.
  */
 public class XmlDigester {
 
-    static final Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
     public Root root = new Root();
 
     public Root DigesterIt(File file) throws IOException, SAXException

@@ -84,6 +84,47 @@ public class TuStoreRequest {
                 '}';
     }
 
+    /**
+     * Overloading toString to allow printing only the content of some nodes
+     * @param nodesToMatch we print only the content of these nodes
+     * @return a string with a list of nodes name and nodes value
+     */
+    public String toString(List<String> nodesToMatch) {
+        String result = "";
+        for (String elementName : nodesToMatch) {
+            try {
+                result += getValue(elementName);
+            } catch (Throwable throwable) {
+                throwable.printStackTrace();
+            }
+        }
+        return result;
+    }
+
+    String getValue(String elementName) {
+        String elementValue = "";
+        switch (elementName.toLowerCase()) {
+            case "ns2:id"            : elementValue = getNs2ID();            break;
+            case "ns2:type"          : elementValue = getNs2Type();          break;
+            case "ns2:version"       : elementValue = getNs2Version();       break;
+            case "ns2:timestamp"     : elementValue = getNs2Timestamp();     break;
+            case "ns2:sender"        : elementValue = getNs2Sender();        break;
+            case "ns2:receiver"      : elementValue = getNs2Receiver();      break;
+            case "ns5:priority"      : elementValue = getNs5Priority();      break;
+            case "ns2:denomination"  : elementValue = getNs2Denomination();  break;
+            case "ns2:valuabletype"  : elementValue = getNs2ValuableType();  break;
+            case "ns2:inventorytype" : elementValue = getNs2InventoryType(); break;
+            case "ns2:inventoryunit" : elementValue = getNs2InventoryUnit(); break;
+            case "ns2:quantity"      : elementValue = getNs2Quantity();      break;
+            case "ns2:value"         : elementValue = getNs2Value();         break;
+            case "ns2:tuid"          : elementValue = getNs2TuId();          break;
+            case "ns5:srcloc"        : elementValue = getNs5SrcLoc();        break;
+            case "ns5:destloc"       : elementValue = getNs5DestLoc();       break;
+            case "ns5:isholdover"    : elementValue = getNs5IsHoldOver();    break;
+        }
+        return "Node \"" + elementName + "\" found with value \"" + elementValue + "\"\n";
+    }
+
     public String getNs2ID() {
         return ns2ID;
     }
@@ -152,40 +193,4 @@ public class TuStoreRequest {
         return ns5IsHoldOver;
     }
 
-
-    public String toString(List<String> nodesToMatch) {
-        String result = "";
-        for (String elementName : nodesToMatch) {
-            try {
-                result += getValue(elementName);
-            } catch (Throwable throwable) {
-                throwable.printStackTrace();
-            }
-        }
-        return result;
-    }
-
-     String getValue(String elementName) {
-        String elementValue = "";
-        switch (elementName.toLowerCase()) {
-            case "ns2:id"            : elementValue = getNs2ID();            break;
-            case "ns2:type"          : elementValue = getNs2Type();          break;
-            case "ns2:version"       : elementValue = getNs2Version();       break;
-            case "ns2:timestamp"     : elementValue = getNs2Timestamp();     break;
-            case "ns2:sender"        : elementValue = getNs2Sender();        break;
-            case "ns2:receiver"      : elementValue = getNs2Receiver();      break;
-            case "ns5:priority"      : elementValue = getNs5Priority();      break;
-            case "ns2:denomination"  : elementValue = getNs2Denomination();  break;
-            case "ns2:valuabletype"  : elementValue = getNs2ValuableType();  break;
-            case "ns2:inventorytype" : elementValue = getNs2InventoryType(); break;
-            case "ns2:inventoryunit" : elementValue = getNs2InventoryUnit(); break;
-            case "ns2:quantity"      : elementValue = getNs2Quantity();      break;
-            case "ns2:value"         : elementValue = getNs2Value();         break;
-            case "ns2:tuid"          : elementValue = getNs2TuId();          break;
-            case "ns5:srcloc"        : elementValue = getNs5SrcLoc();        break;
-            case "ns5:destloc"       : elementValue = getNs5DestLoc();       break;
-            case "ns5:isholdover"    : elementValue = getNs5IsHoldOver();    break;
-        }
-        return "Node \"" + elementName + "\" found with value \"" + elementValue + "\"\n";
-     }
 }

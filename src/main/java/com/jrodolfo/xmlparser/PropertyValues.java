@@ -29,12 +29,9 @@ public class PropertyValues {
             } else {
                 throw new FileNotFoundException("Property file '" + propFileName + "' was not found in the classpath.");
             }
-
-            // get the properties values and print them out
             logger.debug("files.to.parse=" + properties.getProperty("files.to.parse"));
             logger.debug("nodes.to.match=" + properties.getProperty("nodes.to.match"));
             logger.debug("threshold.file.size=" + properties.getProperty("threshold.file.size"));
-
         } catch (Exception e) {
             logger.error("Exception: " + e);
         } finally {

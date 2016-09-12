@@ -12,10 +12,6 @@ public class Root {
 
     public Root(){}
 
-    public Root(List<TuStoreRequest> listOfTuStoreRequest) {
-        this.listOfTuStoreRequest = listOfTuStoreRequest;
-    }
-
     @Override
     public String toString() {
         String tuStoreRequestStr = "";
@@ -38,14 +34,6 @@ public class Root {
             i++;
         }
         return tuStoreRequestStr;
-    }
-
-    public List<TuStoreRequest> getListOfTuStoreRequest() {
-        return listOfTuStoreRequest;
-    }
-
-    public void setListOfTuStoreRequest(List<TuStoreRequest> listOfTuStoreRequest) {
-        this.listOfTuStoreRequest = listOfTuStoreRequest;
     }
 
     public void addTuStoreRequest(TuStoreRequest tuStoreRequest) {
