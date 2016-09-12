@@ -52,12 +52,7 @@ threshold to define big files in number of bytes
 
 ## To do list
 
-1) Fix 
-
-Exception in thread "main" java.lang.NoClassDefFoundError: org/slf4j/LoggerFactory
-        at com.jrodolfo.xmlparser.App.<init>(App.java:21)
-
-2) Implement case insensitive in DomXmlParser
+1) Implement case insensitive in DomXmlParser
 
 Best regards,
 
