@@ -18,7 +18,7 @@ This is a Java app that implements XML parse using DOM and SAX based on the foll
 4) Application is able to handle large files.
 
 5) The key threshold.file.size on the configuration file defines the threshold file size 
-   in bytes, e.g. threshold.file.size=20000, which is used to define big files, i.e. any 
+   in bytes, e.g. threshold.file.size=20000, which is used to define large files, i.e. any 
    xml file larger than that 20,000 bytes is considered to be a large file. In this case, 
    the application uses an appropriate parsing method (SAX, instead of DOM) to be able to 
    handle large files.
